@@ -5,7 +5,6 @@ import {styles} from './style';
 interface IProps {
   onPress: () => void;
   title: string;
-  key?: string;
 }
 
 export const Menu = ({onPress, title}: IProps) => {
