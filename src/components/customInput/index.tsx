@@ -19,6 +19,7 @@ const CustomInput = ({
       render={({field: {value, onBlur, onChange}, fieldState: {error}}) => (
         <View>
           <TextInput
+            autoCapitalize="none"
             value={value}
             onChangeText={onChange}
             onBlur={onBlur}

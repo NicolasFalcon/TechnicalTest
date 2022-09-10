@@ -77,6 +77,11 @@ const SignupScreen = () => {
               onPress={handleSubmit(handleSignUp)}
             />
           </View>
+
+          <Text style={styles.terms}>
+            Al crear tu cuenta aceptas nuestros, Términos y Condiciones y
+            Politica de Privacidad.
+          </Text>
         </View>
       </View>
     </ImageBackground>

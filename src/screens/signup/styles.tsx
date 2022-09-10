@@ -37,4 +37,13 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Avenir',
   },
+
+  terms: {
+    marginTop: 30,
+    color: ThemeColors.blueTaxdown,
+    fontWeight: '700',
+    fontSize: 12,
+    fontFamily: 'Avenir',
+    textAlign: 'center',
+  },
 });

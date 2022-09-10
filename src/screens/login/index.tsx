@@ -15,7 +15,7 @@ import Logo from '../../components/logo';
 
 const LoginScreen = () => {
   const img = './../../assets/background.png';
-  const {control, handleSubmit} = useForm();
+  const {control, handleSubmit} = useForm<Authenticate.ILoginRequest>();
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const LoginScreen = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleLogin = (loginRequest: any) => {
+  const handleLogin = (loginRequest: Authenticate.ILoginRequest) => {
     auth
       .signInWithEmailAndPassword(loginRequest.email, loginRequest.password)
       .then(() => {
