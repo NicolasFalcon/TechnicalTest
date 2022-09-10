@@ -1,11 +1,25 @@
 export class Constants {
-  public static readonly Urlusers = {
-    userData1: 'https://jsonplaceholder.typicode.com/posts?userId=1',
-    userData2: 'https://jsonplaceholder.typicode.com/posts?userId=2',
-    userData3: 'https://jsonplaceholder.typicode.com/posts?userId=3',
+  public static readonly loadingMessages = {
+    default: 'Cargando',
+    MiniprogramLocal: 'Cargando locales',
+    MiniprogramBuySalcobrand: 'Cargando productos',
+    MiniprogramProductsMiSalcobrand: 'Cargando productos con descuento',
   };
 
-  public static readonly MapsApi = {
-    api_key: 'AIzaSyBy4tQlhs1JLQMN6hpQ8HsQxKXenSs1wv4',
+  public static readonly erroMessages = {
+    Success: 'Signed in!',
+    TemporarilyDisabled:
+      'Access to this account has been temporarily disabled due to many failed login attempts.',
+    UserNotFound: 'User not found',
+    WrongPassword:
+      'The password is invalid or the user does not have a password.',
+    InvalidEmail: 'The email address is badly formatted.',
+    EmailInUse: 'The email address is already in use by another account.',
+    AccountCreated: 'User account created & signed in!',
+  };
+
+  public static readonly backgroundImages = {
+    background1: './../assets/background.png',
+    background2: './../assets/background2.png',
   };
 }

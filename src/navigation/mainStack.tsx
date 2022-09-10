@@ -1,34 +1,27 @@
 import React from 'react';
 
-import {HomeScreen} from '../screens/home';
-import {MapScreen} from '../screens/map';
+import HomeScreen from '../screens/home';
 
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {createStackNavigator} from '@react-navigation/stack';
+import {LoginScreen, SignupScreen} from '../screens';
+import {EScreens} from '../enums/EScreens';
 
 export const MainStack = () => {
-  const {top: paddingTop} = useSafeAreaInsets();
-  const Tab = createMaterialTopTabNavigator();
+  const Stack = createStackNavigator();
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        style={{
-          paddingTop,
-        }}
-        sceneContainerStyle={{
-          backgroundColor: 'white',
-        }}
-        tabBarOptions={{
-          showIcon: true,
-          style: {
-            shadowColor: 'transparent',
-            elevation: 0,
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+          cardStyle: {
+            backgroundColor: 'white',
           },
         }}>
-        <Tab.Screen name="Users" component={HomeScreen} />
-        <Tab.Screen name="Map" component={MapScreen} />
-      </Tab.Navigator>
+        <Stack.Screen name={EScreens.Login} component={LoginScreen} />
+        <Stack.Screen name={EScreens.Signup} component={SignupScreen} />
+        <Stack.Screen name={EScreens.Home} component={HomeScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
