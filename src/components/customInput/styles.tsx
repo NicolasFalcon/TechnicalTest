@@ -7,10 +7,15 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
     borderRadius: 10,
-    marginTop: 20,
+    marginTop: 10,
+    marginBottom: 10,
   },
   hint: {
     color: 'red',
     fontSize: 11,
+  },
+  label: {
+    fontSize: 16,
+    color: ThemeColors.blueTaxdown,
   },
 });

@@ -53,11 +53,4 @@ export const toastConfig = {
       icon={<Icon name="information" size={25} color={ToastColors.infoIcon} />}
     />
   ),
-  warning: (props: BaseToastProps) => (
-    <BaseCustomToast
-      {...props}
-      containerStyles={styles.warning}
-      icon={<Icon name="alert" size={25} color={ToastColors.warningIcon} />}
-    />
-  ),
 };

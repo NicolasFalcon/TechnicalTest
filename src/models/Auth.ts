@@ -10,10 +10,11 @@ export namespace Authenticate {
   }
 
   export interface CustomInput {
+    label?: string;
     control: any;
     name: string;
     placeholder: string;
-    secureTextEntry: boolean;
+    secureTextEntry?: boolean;
     rules: {};
   }
 }

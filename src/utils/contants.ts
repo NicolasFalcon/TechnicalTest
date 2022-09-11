@@ -1,13 +1,9 @@
 export class Constants {
   public static readonly loadingMessages = {
-    default: 'Cargando',
-    MiniprogramLocal: 'Cargando locales',
-    MiniprogramBuySalcobrand: 'Cargando productos',
-    MiniprogramProductsMiSalcobrand: 'Cargando productos con descuento',
+    default: 'Loading',
   };
 
   public static readonly erroMessages = {
-    Success: 'Signed in!',
     TemporarilyDisabled:
       'Access to this account has been temporarily disabled due to many failed login attempts.',
     UserNotFound: 'User not found',
@@ -16,10 +12,20 @@ export class Constants {
     InvalidEmail: 'The email address is badly formatted.',
     EmailInUse: 'The email address is already in use by another account.',
     AccountCreated: 'User account created & signed in!',
+    UnableToShare: 'cannot share the content try again later',
   };
 
-  public static readonly backgroundImages = {
-    background1: './../assets/background.png',
-    background2: './../assets/background2.png',
+  public static readonly successMessages = {
+    SuccessShare: 'Check it out this Awesome App Taxdown',
+    SuccessLogin: 'Signed in!',
+    SucessSubmit: 'Submit Succesfully',
+  };
+
+  public static readonly informacionMessages = {
+    taxesIfo: 'In here you can se all your taxes information',
+  };
+
+  public static readonly urlInputs = {
+    baseUrl: 'http://localhost:3000/inputFields',
   };
 }

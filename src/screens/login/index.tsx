@@ -6,12 +6,10 @@ import CustomInput from '../../components/customInput';
 import {auth} from '../../../firebase';
 import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../../components/customButton';
-import Toast from 'react-native-toast-message';
-import {FbStatus} from '../../enums/EHttpStatus';
-import {Constants} from '../../utils/contants';
 import {Authenticate} from '../../models/Auth';
 import {EScreens} from '../../enums/EScreens';
 import Logo from '../../components/logo';
+import {AuthLogin} from '../../services/authServices';
 
 const LoginScreen = () => {
   const img = './../../assets/background.png';
@@ -29,45 +27,7 @@ const LoginScreen = () => {
   }, []);
 
   const handleLogin = (loginRequest: Authenticate.ILoginRequest) => {
-    auth
-      .signInWithEmailAndPassword(loginRequest.email, loginRequest.password)
-      .then(() => {
-        Toast.show({
-          type: 'success',
-          text1: Constants.erroMessages.Success,
-        });
-      })
-      .catch((error: Authenticate.IFirebaseError) => {
-        switch (error.code) {
-          case FbStatus.TooManyRequests:
-            Toast.show({
-              type: 'error',
-              text1: Constants.erroMessages.TemporarilyDisabled,
-            });
-            break;
-          case FbStatus.UserNoFound:
-            Toast.show({
-              type: 'error',
-              text1: Constants.erroMessages.UserNotFound,
-            });
-            break;
-          case FbStatus.WrongPassword:
-            Toast.show({
-              type: 'error',
-              text1: Constants.erroMessages.WrongPassword,
-            });
-            break;
-          case FbStatus.InvalidEmail:
-            Toast.show({
-              type: 'error',
-              text1: Constants.erroMessages.InvalidEmail,
-            });
-            break;
-          default:
-            break;
-        }
-        return;
-      });
+    AuthLogin(loginRequest);
   };
 
   return (

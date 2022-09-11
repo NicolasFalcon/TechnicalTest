@@ -10,6 +10,7 @@ const CustomInput = ({
   placeholder,
   secureTextEntry,
   rules,
+  label,
 }: Authenticate.CustomInput) => {
   return (
     <Controller
@@ -18,6 +19,7 @@ const CustomInput = ({
       rules={rules}
       render={({field: {value, onBlur, onChange}, fieldState: {error}}) => (
         <View>
+          {label && <Text style={styles.label}>{label}</Text>}
           <TextInput
             autoCapitalize="none"
             value={value}

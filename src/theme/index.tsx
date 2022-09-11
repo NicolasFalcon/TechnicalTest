@@ -27,7 +27,7 @@ export const TextColors = {
 export const ToastColors = {
   success: '#CEFFF2',
   successIcon: '#23ab66',
-  info: '#BFD8F6',
+  info: '#e6f7e9',
   infoIcon: '#2471ca',
   warning: '#FFF3C5',
   warningIcon: '#fed83d',

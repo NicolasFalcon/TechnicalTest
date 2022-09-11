@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   text2: {
     color: ToastColors.text,
-    fontWeight: '200',
+    fontWeight: '300',
     fontSize: 14,
   },
 
