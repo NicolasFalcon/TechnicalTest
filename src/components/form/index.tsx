@@ -4,27 +4,24 @@ import React from 'react';
 import {styles} from './styles';
 import CustomInput from '../customInput';
 import CustomButton from '../customButton';
-
+import {useDispatch} from 'react-redux';
 import {useForm} from 'react-hook-form';
 import CardComponent from '../card';
 import {Submit} from '../../models/Submit';
-import {Constants} from '../../utils/contants';
-import Toast from 'react-native-toast-message';
 import {useInputs} from '../../hooks/useInputs';
+import {onSaveUserAction} from '../../redux/actions/SubmitActions/submitActions';
 
 const FormComponent = () => {
-  const {control, handleSubmit} = useForm<Submit.IValues>();
+  const {control, handleSubmit, reset} = useForm<Submit.IValues>();
+  const dispatch = useDispatch();
 
   const {inputs} = useInputs();
 
-  const onSubmit = (submitRequest: Submit.IValues) => {
-    console.log(submitRequest.name, submitRequest.surname, submitRequest.age);
-    Toast.show({
-      type: 'success',
-      text1: Constants.successMessages.SucessSubmit,
-    });
+  const onSubmit = async (submitRequest: Submit.IValues) => {
+    console.log(submitRequest);
+    await dispatch(onSaveUserAction(submitRequest));
+    reset();
   };
-
   return (
     <View style={styles.container}>
       <CardComponent style={styles.card}>

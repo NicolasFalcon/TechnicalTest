@@ -4,7 +4,7 @@ import HomeScreen from '../screens/home';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {LoginScreen, SignupScreen} from '../screens';
+import {LoginScreen, SignupScreen, SubmissionScreen} from '../screens';
 import {EScreens} from '../enums/EScreens';
 
 export const MainStack = () => {
@@ -21,6 +21,7 @@ export const MainStack = () => {
         <Stack.Screen name={EScreens.Login} component={LoginScreen} />
         <Stack.Screen name={EScreens.Signup} component={SignupScreen} />
         <Stack.Screen name={EScreens.Home} component={HomeScreen} />
+        <Stack.Screen name={EScreens.Submission} component={SubmissionScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -29,8 +29,6 @@ export const ToastColors = {
   successIcon: '#23ab66',
   info: '#e6f7e9',
   infoIcon: '#2471ca',
-  warning: '#FFF3C5',
-  warningIcon: '#fed83d',
   error: '#F7C6C8',
   errorIcon: '#cd3b42',
   text: '#212121',

@@ -12,7 +12,7 @@ export const useInputs = () => {
   }, []);
 
   const getInputs = async () => {
-    axios.get(`${Constants.urlInputs.baseUrl}`).then(input => {
+    await axios.get(`${Constants.urlInputs.baseUrl}`).then(input => {
       if (input.status !== 200) {
         console.log('cannot get data');
       }
