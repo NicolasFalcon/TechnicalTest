@@ -11,6 +11,7 @@ const CustomInput = ({
   secureTextEntry,
   rules,
   label,
+  maxLength,
 }: Authenticate.CustomInput) => {
   return (
     <Controller
@@ -21,6 +22,7 @@ const CustomInput = ({
         <View>
           {label && <Text style={styles.label}>{label}</Text>}
           <TextInput
+            maxLength={maxLength}
             autoCapitalize="none"
             value={value}
             onChangeText={onChange}

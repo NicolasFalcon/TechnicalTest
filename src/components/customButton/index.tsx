@@ -2,8 +2,7 @@ import React from 'react';
 import {IButton} from '../../models/components/IButton';
 import Typography from '../typography';
 import {styleContainer, styles, styleTextButton} from './styles';
-import {ActivityIndicator, TouchableOpacity, View} from 'react-native';
-import {ThemeColors} from '../../theme';
+import {TouchableOpacity, View} from 'react-native';
 
 const CustomButton = ({
   title,
@@ -12,7 +11,6 @@ const CustomButton = ({
   styleText,
   iconLeft,
   iconRight,
-  loading,
   ...props
 }: IButton) => {
   return (
@@ -26,13 +24,6 @@ const CustomButton = ({
       {...props}>
       {iconLeft && iconLeft}
       <View style={styles.textContainer}>
-        {loading && (
-          <ActivityIndicator
-            size={15}
-            color={ThemeColors.white}
-            style={styles.mr10}
-          />
-        )}
         <Typography style={{...styleTextButton(variant), ...styleText}}>
           {title}
         </Typography>

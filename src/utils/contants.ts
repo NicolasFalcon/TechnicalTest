@@ -13,6 +13,7 @@ export class Constants {
     EmailInUse: 'The email address is already in use by another account.',
     AccountCreated: 'User account created & signed in!',
     UnableToShare: 'cannot share the content try again later',
+    UnableSubmit: 'Unable submit data',
   };
 
   public static readonly successMessages = {

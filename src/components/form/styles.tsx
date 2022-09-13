@@ -1,8 +1,13 @@
 import {StyleSheet} from 'react-native';
+import {ThemeColors} from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
+  },
+
+  GreenButton: {
+    backgroundColor: ThemeColors.greenTaxdown,
   },
 
   taxesTitle: {

@@ -1,28 +1,31 @@
 import React from 'react';
 
-import HomeScreen from '../screens/home';
-
-import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {LoginScreen, SignupScreen, SubmissionScreen} from '../screens';
+
 import {EScreens} from '../enums/EScreens';
+import {TabsNavigator} from './tabsStack';
+import {ENavigations} from '../enums/ENavigations';
+import {LoginStack} from './loginStack';
 
 export const MainStack = () => {
   const Stack = createStackNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
+    <Stack.Navigator
+      initialRouteName={EScreens.Login}
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name={ENavigations.TabsNavigator}
+        component={TabsNavigator}
+      />
+      <Stack.Screen
+        options={{
           headerShown: false,
-          cardStyle: {
-            backgroundColor: 'white',
-          },
-        }}>
-        <Stack.Screen name={EScreens.Login} component={LoginScreen} />
-        <Stack.Screen name={EScreens.Signup} component={SignupScreen} />
-        <Stack.Screen name={EScreens.Home} component={HomeScreen} />
-        <Stack.Screen name={EScreens.Submission} component={SubmissionScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+        }}
+        name={ENavigations.LoginStack}
+        component={LoginStack}
+      />
+    </Stack.Navigator>
   );
 };

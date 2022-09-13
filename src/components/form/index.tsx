@@ -7,19 +7,19 @@ import CustomButton from '../customButton';
 import {useDispatch} from 'react-redux';
 import {useForm} from 'react-hook-form';
 import CardComponent from '../card';
-import {Submit} from '../../models/Submit';
+import {User} from '../../models/Submit';
 import {useInputs} from '../../hooks/useInputs';
 import {onSaveUserAction} from '../../redux/actions/SubmitActions/submitActions';
 
 const FormComponent = () => {
-  const {control, handleSubmit, reset} = useForm<Submit.IValues>();
+  const {control, handleSubmit, reset} = useForm<User.IValues>();
   const dispatch = useDispatch();
 
   const {inputs} = useInputs();
 
-  const onSubmit = async (submitRequest: Submit.IValues) => {
+  const onSubmit = (submitRequest: User.IValues) => {
     console.log(submitRequest);
-    await dispatch(onSaveUserAction(submitRequest));
+    dispatch<any>(onSaveUserAction(submitRequest));
     reset();
   };
   return (
@@ -28,6 +28,7 @@ const FormComponent = () => {
         <View>
           {inputs.map((input: any) => (
             <CustomInput
+              maxLength={input.maxLength}
               label={input.label}
               placeholder={input.placeholder}
               control={control}
@@ -41,6 +42,7 @@ const FormComponent = () => {
           <CustomButton
             variant="solid"
             title="Submit"
+            style={styles.GreenButton}
             onPress={handleSubmit(onSubmit)}
           />
         </View>

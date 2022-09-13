@@ -1,17 +1,21 @@
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, Text, SafeAreaView, FlatList} from 'react-native';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {ApplicationState} from '../../redux/reducer';
+import {UsersCardComponent} from '../../components';
+import {styles} from './style';
 
 const SubmissionScreen = () => {
-  const submission = useSelector((state: ApplicationState) => state.submit);
-
-  console.log('users form submissions screen', submission);
+  const users = useSelector((state: ApplicationState) => state.submit);
 
   return (
     <SafeAreaView>
-      <View>
-        <Text>index</Text>
+      <View style={styles.container}>
+        <Text style={styles.userTitle}>User submission</Text>
+        <FlatList
+          data={users.user}
+          renderItem={({item}: any) => <UsersCardComponent user={item} />}
+        />
       </View>
     </SafeAreaView>
   );

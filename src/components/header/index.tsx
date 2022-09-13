@@ -3,24 +3,17 @@ import React from 'react';
 import Toast from 'react-native-toast-message';
 import CustomButton from '../customButton';
 import {styles} from './styles';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import IconLogo from '../icon';
 import {useNavigation} from '@react-navigation/native';
-import {auth} from '../../../firebase';
-import {EScreens} from '../../enums/EScreens';
 import {Constants} from '../../utils/contants';
-import {ThemeColors} from '../../theme';
+import {AuthSignOut} from '../../services/authServices';
 
 const Header = () => {
-  const navigation = useNavigation();
+  const navigator = useNavigation();
 
-  const handleSignOut = () => {
-    auth
-      .signOut()
-      .then(() => {
-        navigation.replace(EScreens.Login);
-      })
-      .catch((error: any) => console.log(error));
+  const handleSignOut = (navigation: any) => {
+    AuthSignOut(navigation);
   };
 
   const onShare = async () => {
@@ -59,7 +52,7 @@ const Header = () => {
         style={styles.buttonGreen}
         styleText={styles.buttonText}
         title="Logout"
-        onPress={() => handleSignOut()}
+        onPress={() => handleSignOut(navigator)}
       />
     </View>
   );

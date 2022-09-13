@@ -1,15 +1,15 @@
-import {Submit} from '../../models/Submit';
+import {User} from '../../models/Submit';
 import {userActionTypes} from '../actions/SubmitActions/submitActions';
 
 export enum UserReducerEnum {
   ON_SAVE_DATA = ' ON_SUBMIT',
 }
 export type UserReducerStateType = {
-  data: Submit.IValues[];
+  user: User.IValues[];
 };
 
 const initialState = {
-  data: [],
+  user: [],
 };
 const SubmitReducer = (
   state: UserReducerStateType = initialState,
@@ -19,12 +19,10 @@ const SubmitReducer = (
     case UserReducerEnum.ON_SAVE_DATA:
       return {
         ...state,
-        data: [...state.data, actions.payload],
+        user: [...state.user, actions.payload],
       };
     default:
       return state;
   }
 };
 export {SubmitReducer};
-
-//TODO CHANGE SUBMIT NAMES FOR USER NAMES NAMES MORE DECLARATIVE

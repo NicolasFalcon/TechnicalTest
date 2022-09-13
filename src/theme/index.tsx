@@ -3,6 +3,7 @@ export const ThemeColors = {
   blueTaxdown: '#2f2e46',
 
   lightGrey: '#eaeaea',
+  lightBlue: '#0099cc',
   white: '#ffffff',
   darkGrey: '#e0e0e0',
   black: '#000000',

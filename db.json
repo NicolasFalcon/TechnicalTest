@@ -12,13 +12,28 @@
       "label": "Surname",
       "placeholder": "Your last name",
       "type": "text",
-      "maxLength": 40
+      "maxLength": 10
+    },
+    {
+      "id": "role",
+      "label": "Role",
+      "placeholder": "Your role",
+      "type": "text",
+      "maxLength": 20
     },
     {
       "id": "age",
       "label": "Age",
       "placeholder": "Your age",
-      "type": "number"
+      "type": "number",
+      "maxLength": 4
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "placeholder": "Your Email",
+      "type": "text",
+      "maxLength": 50
     }
   ]
 }

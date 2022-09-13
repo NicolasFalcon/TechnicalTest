@@ -32,7 +32,4 @@ export const styles = StyleSheet.create({
   info: {
     backgroundColor: ToastColors.info,
   },
-  warning: {
-    backgroundColor: ToastColors.warning,
-  },
 });

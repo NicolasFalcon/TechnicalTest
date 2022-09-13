@@ -8,7 +8,6 @@ export interface IButton extends TouchableOpacityProps {
   style?: ViewStyle;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
-  loading?: boolean;
 }
 
 export type TVariantButton = 'solid' | 'outline' | 'default' | 'badgeOutline';

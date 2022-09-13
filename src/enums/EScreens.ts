@@ -1,6 +1,6 @@
 export enum EScreens {
-  Home = 'HomeScreen',
+  Home = 'Home',
   Signup = 'Sign up',
   Login = 'Login',
-  Submission = 'SubmissionScreen',
+  Submission = 'User',
 }

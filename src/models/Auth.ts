@@ -13,6 +13,8 @@ export namespace Authenticate {
     label?: string;
     control: any;
     name: string;
+    maxLength: number;
+    type?: string;
     placeholder: string;
     secureTextEntry?: boolean;
     rules: {};

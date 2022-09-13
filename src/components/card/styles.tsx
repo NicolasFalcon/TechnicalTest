@@ -4,7 +4,7 @@ import {ThemeColors} from '../../theme';
 export const styles = StyleSheet.create({
   card: {
     flexDirection: 'column',
-    padding: 20,
+    padding: 15,
     justifyContent: 'flex-start',
     alignContent: 'flex-start',
     zIndex: 1,
