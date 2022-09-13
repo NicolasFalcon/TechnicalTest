@@ -21,7 +21,8 @@ The app features reusable components, Hooks, Redux, Axios, Navigations, Interfac
 Start the project:
 
 1: Download the source code from git
-2: npx react-native run-ios | run-android
+2:run npm-install
+3: npx react-native run-ios | run-android
 
 Start the json-server
 
