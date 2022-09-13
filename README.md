@@ -1,6 +1,6 @@
 # TechnicalTest TaxDown V1.0
 
-The app, the app has been tested in a IOS Emulator
+The app has been tested in a IOS Emulator
 
 Features:
 
