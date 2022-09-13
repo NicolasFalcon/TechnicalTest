@@ -12,7 +12,7 @@ Features:
 - Submit Form
 - Dinamic Inputs from json http request
 - Bottom Navigation taps
-- LisView
+- ListView
 
 
 The app features reusable components, Hooks, Redux, Axios, Navigations, Interfaces, 
