@@ -33,6 +33,37 @@ export const AuthSignOut = (navigation: any) => {
     .catch((error: any) => console.error(error));
 };
 
+//-------LOGOUT FIREBASE--------//
+export const AuthSignUp = (signRequest: Authenticate.ISignUpRequest) => {
+  auth
+    .createUserWithEmailAndPassword(signRequest.email, signRequest.password)
+    .then(() => {
+      Toast.show({
+        type: 'success',
+        text1: Constants.erroMessages.AccountCreated,
+      });
+    })
+    .catch((error: Authenticate.IFirebaseError) => {
+      switch (error.code) {
+        case FbStatus.EmailAlreadyInuse:
+          Toast.show({
+            type: 'error',
+            text1: Constants.erroMessages.EmailInUse,
+          });
+          break;
+        case FbStatus.InvalidEmail:
+          Toast.show({
+            type: 'error',
+            text1: Constants.erroMessages.InvalidEmail,
+          });
+          break;
+        default:
+          break;
+      }
+      return;
+    });
+};
+
 const onError = (error: Authenticate.IFirebaseError) => {
   switch (error.code) {
     case FbStatus.TooManyRequests:

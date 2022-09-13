@@ -7,7 +7,7 @@ import CustomButton from '../customButton';
 import {useDispatch} from 'react-redux';
 import {useForm} from 'react-hook-form';
 import CardComponent from '../card';
-import {User} from '../../models/Submit';
+import {User} from '../../models/User';
 import {useInputs} from '../../hooks/useInputs';
 import {onSaveUserAction} from '../../redux/actions/SubmitActions/submitActions';
 

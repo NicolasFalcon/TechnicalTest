@@ -4,6 +4,11 @@ export namespace Authenticate {
     password: string;
   }
 
+  export interface ISignUpRequest {
+    email: string;
+    password: string;
+  }
+
   export interface IFirebaseError {
     code: string;
     message: string;
@@ -13,7 +18,7 @@ export namespace Authenticate {
     label?: string;
     control: any;
     name: string;
-    maxLength: number;
+    maxLength?: number;
     type?: string;
     placeholder: string;
     secureTextEntry?: boolean;

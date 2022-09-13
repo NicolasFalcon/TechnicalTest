@@ -1,25 +1,25 @@
-import {User} from '../../models/Submit';
+import {User} from '../../models/User';
 import {userActionTypes} from '../actions/SubmitActions/submitActions';
 
 export enum UserReducerEnum {
   ON_SAVE_DATA = ' ON_SUBMIT',
 }
 export type UserReducerStateType = {
-  user: User.IValues[];
+  users: User.IValues[];
 };
 
 const initialState = {
-  user: [],
+  users: [],
 };
 const SubmitReducer = (
   state: UserReducerStateType = initialState,
-  actions: userActionTypes,
+  action: userActionTypes,
 ) => {
-  switch (actions.type) {
+  switch (action.type) {
     case UserReducerEnum.ON_SAVE_DATA:
       return {
         ...state,
-        user: [...state.user, actions.payload],
+        user: [...state.users, action.payload],
       };
     default:
       return state;

@@ -1,48 +1,19 @@
 import {View, Text, ImageBackground} from 'react-native';
 import React from 'react';
-import {auth} from '../../../firebase';
 import CustomInput from '../../components/customInput';
 import {styles} from './styles';
 import {useForm} from 'react-hook-form';
 import CustomButton from '../../components/customButton';
-import {Constants} from '../../utils/contants';
 import {Authenticate} from '../../models/Auth';
-import {FbStatus} from '../../enums/EHttpStatus';
-import Toast from 'react-native-toast-message';
 import Logo from '../../components/logo';
+import {AuthSignUp} from '../../services/authServices';
 
 const SignupScreen = () => {
-  const {control, handleSubmit} = useForm();
+  const {control, handleSubmit} = useForm<Authenticate.ISignUpRequest>();
 
   const img = './../../assets/background2.png';
-  const handleSignUp = (loginRequest: any) => {
-    auth
-      .createUserWithEmailAndPassword(loginRequest.email, loginRequest.password)
-      .then(() => {
-        Toast.show({
-          type: 'success',
-          text1: Constants.erroMessages.AccountCreated,
-        });
-      })
-      .catch((error: Authenticate.IFirebaseError) => {
-        switch (error.code) {
-          case FbStatus.EmailAlreadyInuse:
-            Toast.show({
-              type: 'error',
-              text1: Constants.erroMessages.EmailInUse,
-            });
-            break;
-          case FbStatus.InvalidEmail:
-            Toast.show({
-              type: 'error',
-              text1: Constants.erroMessages.InvalidEmail,
-            });
-            break;
-          default:
-            break;
-        }
-        return;
-      });
+  const handleSignUp = (signRequest: Authenticate.ISignUpRequest) => {
+    AuthSignUp(signRequest);
   };
 
   return (

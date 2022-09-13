@@ -2,10 +2,10 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
 import CardComponent from '../card';
-import {Submit} from '../../models/Submit';
+import {User} from '../../models/User';
 
 interface IProps {
-  user: Submit.IValues;
+  user: User.IValues;
 }
 
 const UsersCardComponent = ({user}: IProps) => {

@@ -1,4 +1,4 @@
-import {User} from '../../../models/Submit';
+import {User} from '../../../models/User';
 import {UserReducerEnum} from '../../reducer/submitReducer';
 
 export interface UserDataAction {
