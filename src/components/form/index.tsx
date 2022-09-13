@@ -10,6 +10,7 @@ import CardComponent from '../card';
 import {User} from '../../models/User';
 import {useInputs} from '../../hooks/useInputs';
 import {onSaveUserAction} from '../../redux/actions/SubmitActions/submitActions';
+import {Inputs} from '../../models/Inputs';
 
 const FormComponent = () => {
   const {control, handleSubmit, reset} = useForm<User.IValues>();
@@ -26,7 +27,7 @@ const FormComponent = () => {
     <View style={styles.container}>
       <CardComponent style={styles.card}>
         <View>
-          {inputs.map((input: any) => (
+          {inputs.map((input: Inputs.InputField) => (
             <CustomInput
               maxLength={input.maxLength}
               label={input.label}

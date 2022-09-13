@@ -6,7 +6,7 @@ import {Constants} from '../utils/contants';
 import {HttpResponse} from '../enums/EHttpStatus';
 
 export const useInputs = () => {
-  const [inputs, setInputs] = useState<Inputs.InputFields[]>([]);
+  const [inputs, setInputs] = useState<Inputs.InputField[]>([]);
 
   useEffect(() => {
     getInputs();
