@@ -5,11 +5,11 @@ export enum UserReducerEnum {
   ON_SAVE_DATA = ' ON_SUBMIT',
 }
 export type UserReducerStateType = {
-  users: User.IValues[];
+  user: User.IValues[];
 };
 
 const initialState = {
-  users: [],
+  user: [],
 };
 const SubmitReducer = (
   state: UserReducerStateType = initialState,
@@ -19,7 +19,7 @@ const SubmitReducer = (
     case UserReducerEnum.ON_SAVE_DATA:
       return {
         ...state,
-        user: [...state.users, action.payload],
+        user: [...state.user, action.payload],
       };
     default:
       return state;

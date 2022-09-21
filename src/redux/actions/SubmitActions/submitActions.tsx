@@ -5,12 +5,11 @@ import {UserDataAction} from './IsubmitActions';
 import Toast from 'react-native-toast-message';
 import {UserReducerEnum} from '../../reducer/submitReducer';
 import {User} from '../../../models/User';
-import {AnyAction} from 'redux';
 
 export type userActionTypes = UserDataAction;
 
 export const onSaveUserAction = (form: User.IValues) => {
-  return async (dispatch: Dispatch<AnyAction>) => {
+  return async (dispatch: Dispatch<UserDataAction>) => {
     Toast.show({
       type: 'success',
       text1: Constants.successMessages.SucessSubmit,
